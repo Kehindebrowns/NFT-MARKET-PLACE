@@ -38,8 +38,19 @@ contract NFT is ("ERC20,Ownable") {
     mapping(address => NFT[]) private listedNFTs;
 
     function listNFT(uint256 tokenId, string memory metadataURI) external {
-        // Assume there's a function to list an NFT
-        // and that the caller is the owner of the NFT
+        require(nftContract.ownerOf(tokenId) == msg.sender, "You don't own this NFT");
+        require(!listings[tokenId].isSold, "NFT is already sold");
+listings[nextListingId] = Listing({
+            listingId: nextListingId,
+            seller: msg.sender,
+            tokenId: tokenId,
+            price: price,
+            isSold: false
+        });
+
+        emit NFTListed(nextListingId, msg.sender, tokenId, price);
+        nextListingId++;
+    }
         listedNFTs[msg.sender].push(NFT({
             tokenId: tokenId,
             owner: msg.sender,

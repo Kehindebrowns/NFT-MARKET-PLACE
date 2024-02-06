@@ -5,7 +5,7 @@ pragma solidity ^0.8.19;
  import "@openzepplin/contract/access/Ownable.sol"
  
 
-contract NFT is ("ERC20,Ownable") {
+contract NFT is  ("ERC20,Ownable") {
     uint256 payable nextTokenID;
 
     constructor() ERC20("MyNFT","MNFT"){
@@ -41,8 +41,8 @@ contract NFT is ("ERC20,Ownable") {
         // Assume there's a function to list an NFT
         // and that the caller is the owner of the NFT
         listedNFTs[msg.sender].push(NFT({
-            tokenId: tokenId,
-            owner: msg.sender,
+            tokenId: _tokenId,
+            owner: _msg.sender,
             metadataURI: metadataURI
         }));
     }

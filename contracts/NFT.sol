@@ -36,6 +36,11 @@ contract NFT is  ("ERC20,Ownable") {
     }
     
     mapping(address => NFT[]) private listedNFTs;
+ constructor (uint _feeAccount) public {
+        feeAccount  _feeAccount=payable (msg.value);
+          _;
+    }
+
 
     function listNFT(uint256 tokenId, string memory metadataURI) external {
         // Assume there's a function to list an NFT

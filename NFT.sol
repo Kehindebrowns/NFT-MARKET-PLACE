@@ -9,7 +9,7 @@ contract NFT is ("ERC20,Ownable") {
     uint256 payable nextTokenID;
 
     constructor() ERC20("MyNFT","MNFT"){
-    nextTokenID=++;
+    nextTokenID=NextTokenID + 1;
     _;
     }
     function mint(address to) external onlyOwner {
@@ -40,6 +40,7 @@ contract NFT is ("ERC20,Ownable") {
     function listNFT(uint256 tokenId, string memory metadataURI) external {
         require(nftContract.ownerOf(tokenId) == msg.sender, "You don't own this NFT");
         require(!listings[tokenId].isSold, "NFT is already sold");
+
 listings[nextListingId] = Listing({
             listingId: nextListingId,
             seller: msg.sender,

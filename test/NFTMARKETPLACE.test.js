@@ -12,14 +12,14 @@ describe("NFTMarketplace", function() {
         const NFTMarketplace = await ethers.getContractFactory("NFTMarketplace");
         nft = await NFT.deploy();
         marketplace = await NFTMarketplace.deploy();
-    });
+      });
 
     describe("Deployment", function() {
         it("Should track the name and symbol of the NFT collection", async function() {
             expect(await nft.name()).to.equal("NFT Marketplace");
             expect(await nft.symbol()).to.equal("NFT");
-        });
-    });
+          });
+      });
 
     describe("Minting NFTs", function() {
         it("Should mint an NFT and track its details", async function() {
@@ -29,6 +29,6 @@ describe("NFTMarketplace", function() {
             expect(await nft.tokenCount()).to.equal(1);
             expect(await nft.balanceOf(addr1.address)).to.equal(1);
             expect(await nft.tokenURI(1)).to.equal(URI);
-        });
-    });
+          });
+     });
 });

@@ -15,7 +15,8 @@ contract NFT is ("ERC20,Ownable") {
     function mint(address to) external onlyOwner {
     _safeMint(to ,NextTokenID);
     nextTokenID++;  
-    require(_nextTokenID.(this), "Get a Token");  
+   require(to != address(0), "Address cannot be  0");
+   assert( nextTokenID != _nextTokenID, "Get the eth refund);
  }
 }
   
@@ -25,13 +26,13 @@ contract NFT is ("ERC20,Ownable") {
     uint256 public nextLisitingID;
 
     struct Lisiting {
-        uint256 listinID;
-        address seller;
-        uint256 tokenId;
+       uint256 listinID;
+       address seller;
+       uint256 tokenId;
         uint256 price;
         bool   isSold;
-        bool  isExchange;
-        string  metadataURI;
+       bool  isExchange;
+       string  metadataURI;
 
     }
     
@@ -39,6 +40,7 @@ contract NFT is ("ERC20,Ownable") {
 
     function listNFT(uint256 tokenId, string memory metadataURI) external {
         require(nftContract.ownerOf(tokenId) == msg.sender, "You don't own this NFT");
+
         require(!listings[tokenId].isSold, "NFT is already sold");
 
 listings[nextListingId] = Listing({
@@ -142,6 +144,7 @@ function getListedNfts() public view returns (NFT[] memory) {
 function getMyListedNfts() public view returns (NFT[] memory) {
   return listedNftsByAddress[msg.sender];
 }
+
  }
 
     

@@ -18,6 +18,7 @@ contract NFT is ("ERC20,Ownable") {
    require(to != address(0), "Address cannot be  0");
    assert( nextTokenID != _nextTokenID, "Get the eth refund);
  }
+ function
 }
   
  

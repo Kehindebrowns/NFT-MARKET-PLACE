@@ -16,11 +16,11 @@ contract Lock {
             "Unlock time should be in the future"
         );
 
-        unlockTime = _unlockTime;
-        owner = payable(msg.sender);
+         unlockTime = _unlockTime;
+         owner = payable(msg.sender);
     }
 
-    function withdraw() public {
+    function withdraw() external {
         
          console.log("Unlock time is %o and block timestamp is %o", unlockTime, block.timestamp);
 

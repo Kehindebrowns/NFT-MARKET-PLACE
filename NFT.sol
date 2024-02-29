@@ -2,7 +2,7 @@
 pragma solidity ^0.8.19;
 
  import "@openzepplin/contracts/token.ERC721/ERC721.sol";
- import "@openzepplin/contract/access/Ownable.sol"
+ import "@openzepplin/contract/access/Ownable.sol";
  
 
 contract NFT is ("ERC20,Ownable") {
@@ -18,7 +18,7 @@ contract NFT is ("ERC20,Ownable") {
    require(to != address(0), "Address cannot be  0");
    assert( nextTokenID != _nextTokenID, "Get the eth refund);
  }
- function
+ 
 }
   
  

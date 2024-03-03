@@ -2,7 +2,7 @@
 pragma solidity ^0.8.19;
 
  import "@openzepplin/contracts/token.ERC721/ERC721.sol";
- import "@openzepplin/contract/access/Ownable.sol"
+ import "@openzepplin/contract/access/Ownable.sol";
  
 
 contract NFT is  ("ERC20,Ownable") {
@@ -42,14 +42,17 @@ contract NFT is  ("ERC20,Ownable") {
     }
 
 
-    function listNFT(uint256 tokenId, string memory metadataURI) external {
-        // Assume there's a function to list an NFT
-        // and that the caller is the owner of the NFT
+    function listNFT(uint256 tokenId, string memory metadataURI) external 
+     
         listedNFTs[msg.sender].push(NFT({
             tokenId: _tokenId,
             owner: _msg.sender,
             metadataURI: metadataURI
         }));
+ 
+    }
+function isCallerNFTOwner(uint256 tokenId) external view returns (bool) {
+        return nftContract.ownerOf(tokenId) == msg.sender;
     }
 
 
@@ -68,10 +71,10 @@ contract NFT is  ("ERC20,Ownable") {
 
         lisiting[nextLisitingId]=Listing({
             lisitinId :nextLisitingId,
-            seller :msg.sender,
-            tokenId :tokenId,
-            price :price,
-            isSold : false
+            seller  :msg.sender,
+            tokenId  :tokenId,
+            price  :price,
+            isSold  :false
         });
 
           emit NFTListed(nextListingId, msg.sender,tokenId,price);

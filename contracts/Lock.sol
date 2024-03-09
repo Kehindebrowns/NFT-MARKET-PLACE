@@ -32,5 +32,5 @@ contract Lock {
         owner.transfer(address(this).balance);
           console.log(owner);
     }
-  // gunctionallites for deposits 
+  // functionallites for deposits 
 }

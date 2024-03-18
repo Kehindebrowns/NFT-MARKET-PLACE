@@ -38,6 +38,6 @@ contract Lock {
         deposits[msg.sender] += msg.value;
     }
  function getBalance() external view returns (uint256) {
-        return deposits[msg.sender];
+        return deposits[msg.sender]; 
     }
 }

@@ -138,6 +138,9 @@ function getListedNfts() public view returns (NFT[] memory) {
 function getMyListedNfts() public view returns (NFT[] memory) {
   return listedNftsByAddress[msg.sender];
 }
+   recieve() external payable{
+    return(msg.value!=newItem , "Do Not Give The Item");
+}
  }
 
     

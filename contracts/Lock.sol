@@ -5,10 +5,10 @@ pragma solidity ^0.8.19;
  import "hardhat/console.sol";
 
 contract Lock {
-    uint public unlockTime;
+    uint256 public unlockTime;
     address payable public owner;
 
-    event Withdrawal(uint amount, uint when);
+    event Withdrawal(uint256 amount, uint256 when);
     mapping(address => uint256) public deposits;
 
     constructor(uint _unlockTime) payable {
@@ -21,7 +21,7 @@ contract Lock {
          owner = payable(msg.sender);
     }
 
-    function withdrawl() external {
+    function withdraw() external {
         
          console.log("Unlock time is %o and block timestamp is %o", unlockTime, block.timestamp);
 

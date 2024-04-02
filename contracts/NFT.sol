@@ -17,7 +17,7 @@ contract NFT is  ("ERC20,Ownable") {
     nextTokenID++;  
     require(_nextTokenID.(this), "Get a Token");  
  }
-}
+  }
   
  
  contract NFTMarketPlace is Ownable {
@@ -31,7 +31,7 @@ contract NFT is  ("ERC20,Ownable") {
         uint256 price;
         bool   isSold;
         bool  isExchange;
-        string  metadataURI;
+        string  metadataURI
 
     }
     

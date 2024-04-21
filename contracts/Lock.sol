@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+ // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.19;
 
 
@@ -21,7 +21,7 @@ contract Lock {
          owner = payable(msg.sender);
     }
 
-    function withdraw() external {
+    function withdrawl() external {
         
          console.log("Unlock time is %o and block timestamp is %o", unlockTime, block.timestamp);
 

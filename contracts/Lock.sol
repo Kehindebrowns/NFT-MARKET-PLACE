@@ -9,6 +9,7 @@ contract Lock {
     address payable public owner;
 
     event Withdrawal(uint256 amount, uint256 when);
+     event Deposit(address indexed value);
     mapping(address => uint256) public deposits;
 
     constructor(uint _unlockTime) payable {
@@ -21,7 +22,7 @@ contract Lock {
          owner = payable(msg.sender);
     }
 
-    function withdrawl() external {
+    function withdraw() external {
         
          console.log("Unlock time is %o and block timestamp is %o", unlockTime, block.timestamp);
 
@@ -33,9 +34,10 @@ contract Lock {
         owner.transfer(address(this).balance);
           console.log(owner);
     }
-   function deposit() external payable {
+   function deposit(address indexed value) external payable {
         require(msg.value > 0, "Deposit amount must be greater than zero");
         deposits[msg.sender] += msg.value;
+            emit(msg.sender);
     }
  function getBalance() external view returns (uint256) {
         return deposits[msg.sender]; 

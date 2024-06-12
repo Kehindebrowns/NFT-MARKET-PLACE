@@ -85,3 +85,27 @@ Since the community group is over 200 people, you need to be invited to join the
 Open source is not easy, please sponsor LiteFlow if you support it
 
 <img src="static/img/support.png" alt="support" width="258" />
+
+NFT Marketplace
+Welcome to the NFT Marketplace! This is a decentralized application (dApp) for buying, selling, and trading non-fungible tokens (NFTs) on the Ethereum blockchain.
+
+Table of Contents
+Introduction
+Features
+Technologies Used
+Installation
+Usage
+Smart Contracts
+Contributing
+License
+Acknowledgements
+Introduction
+NFT Marketplace is a platform where users can create, buy, sell, and trade unique digital assets (NFTs) secured by blockchain technology. Each NFT represents a unique item such as digital art, collectibles, music, or virtual real estate.
+
+Features
+Create NFTs: Mint your unique digital assets.
+Buy and Sell NFTs: Securely trade NFTs on the platform.
+Auction: Participate in auctions to buy or sell NFTs.
+Wallet Integration: Connect your Ethereum wallet (e.g., MetaMask).
+User Profiles: Manage your NFTs and track your transaction history.
+MORE TO COME
